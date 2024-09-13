@@ -235,7 +235,7 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      const TakeOrderPage(),
+                      TakeOrderPage(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
                     var tween = Tween(
