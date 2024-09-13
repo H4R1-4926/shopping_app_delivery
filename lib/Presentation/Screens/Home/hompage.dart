@@ -10,6 +10,8 @@ import 'package:shopping_app_delivery/Presentation/Login/login.dart';
 
 import 'package:shopping_app_delivery/Presentation/Screens/Account/Profile%20Screens/notification_settings.dart';
 import 'package:shopping_app_delivery/Presentation/Screens/Account/widgets/listtile_widget.dart';
+import 'package:shopping_app_delivery/Presentation/Screens/Home/Placed%20Order%20Page/placed_order.dart';
+import 'package:shopping_app_delivery/Presentation/Screens/Home/Taking%20Order%20Page/take_order.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -230,7 +232,23 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const TakeOrderPage(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    var tween = Tween(
+                      begin: const Offset(1.0, 0.0),
+                      end: Offset.zero,
+                    ).chain(CurveTween(curve: Curves.easeIn));
+                    return SlideTransition(
+                      position: animation.drive(tween),
+                      child: child,
+                    );
+                  },
+                ));
+              },
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
@@ -239,7 +257,23 @@ class HomePage extends StatelessWidget {
               ),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(PageRouteBuilder(
+                  pageBuilder: (context, animation, secondaryAnimation) =>
+                      const PlacedOrder(),
+                  transitionsBuilder:
+                      (context, animation, secondaryAnimation, child) {
+                    var tween = Tween(
+                      begin: const Offset(1.0, 0.0),
+                      end: Offset.zero,
+                    ).chain(CurveTween(curve: Curves.easeIn));
+                    return SlideTransition(
+                      position: animation.drive(tween),
+                      child: child,
+                    );
+                  },
+                ));
+              },
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
