@@ -229,17 +229,23 @@ class HomePage extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              height: 300,
-              color: klightGrey,
+            InkWell(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                height: 300,
+                color: klightGrey,
+              ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15),
-              width: double.infinity,
-              height: 300,
-              color: klightGrey,
+            InkWell(
+              onTap: () {},
+              child: Container(
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                width: double.infinity,
+                height: 300,
+                color: klightGrey,
+              ),
             ),
           ],
         ));
