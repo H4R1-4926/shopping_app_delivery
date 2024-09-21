@@ -18,11 +18,10 @@ class TakeOrderPage extends StatelessWidget {
           style:
               GoogleFonts.montserrat(fontWeight: FontWeight.bold, fontSize: 20),
         ),
-      ),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        bottom: PreferredSize(
+          preferredSize: const Size(double.infinity, 60),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
             child: SearchBar(
               controller: searchController,
               elevation: const WidgetStatePropertyAll(0),
@@ -39,11 +38,65 @@ class TakeOrderPage extends StatelessWidget {
               ],
             ),
           ),
-          const Expanded(
-              child: Center(
-            child: Text('Enter The code'),
-          ))
-        ],
+        ),
+      ),
+      body: ListView.builder(
+        itemCount: 20,
+        padding: const EdgeInsets.only(bottom: 10),
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+            child: GestureDetector(
+              onTap: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: Center(
+                        child: Text(
+                          'Product Code',
+                          style: GoogleFonts.poppins(),
+                        ),
+                      ),
+                      content: Column(
+                        children: [],
+                      ),
+                    );
+                  },
+                );
+              },
+              child: ListTile(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                tileColor: klightGrey,
+                title: Text(
+                  'Product Code',
+                  style: GoogleFonts.poppins(),
+                ),
+                subtitle: Text(
+                  'To (Place Name)',
+                  style: GoogleFonts.poppins(),
+                ),
+                trailing: Container(
+                  height: double.infinity,
+                  width: 90,
+                  decoration: BoxDecoration(
+                      color: kdarkcolor1,
+                      borderRadius: BorderRadius.circular(25)),
+                  child: Center(
+                    child: Text(
+                      'Take\nOrder',
+                      style: GoogleFonts.lato(
+                          color: kwhite,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
