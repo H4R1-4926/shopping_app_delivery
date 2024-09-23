@@ -54,13 +54,79 @@ class TakeOrderPage extends StatelessWidget {
                     return AlertDialog(
                       title: Center(
                         child: Text(
-                          'Product Code',
+                          '(Product Code)',
                           style: GoogleFonts.poppins(),
                         ),
                       ),
                       content: Column(
-                        children: [],
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Name: ',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Price: ',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Payment: ',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Order By: ',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Deliver To: ',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Phone Number:',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Secondary Number:',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Pincode:',
+                            style: GoogleFonts.poppins(),
+                          ),
+                          Text(
+                            'Address:',
+                            style: GoogleFonts.poppins(),
+                          ),
+                        ],
                       ),
+                      actions: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: const ButtonStyle(
+                              backgroundColor: WidgetStatePropertyAll(
+                                kdarkcolor1,
+                              ),
+                              foregroundColor: WidgetStatePropertyAll(kwhite)),
+                          child: Text(
+                            'Close',
+                            style: GoogleFonts.poppins(),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: const ButtonStyle(
+                              backgroundColor: WidgetStatePropertyAll(
+                                kdarkcolor1,
+                              ),
+                              foregroundColor:
+                                  const WidgetStatePropertyAll(kwhite)),
+                          child: Text(
+                            'Proceed with order',
+                            style: GoogleFonts.poppins(),
+                          ),
+                        )
+                      ],
                     );
                   },
                 );
