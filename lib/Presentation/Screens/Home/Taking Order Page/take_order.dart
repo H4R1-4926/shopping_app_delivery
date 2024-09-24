@@ -119,8 +119,7 @@ class TakeOrderPage extends StatelessWidget {
                               backgroundColor: WidgetStatePropertyAll(
                                 kdarkcolor1,
                               ),
-                              foregroundColor:
-                                  const WidgetStatePropertyAll(kwhite)),
+                              foregroundColor: WidgetStatePropertyAll(kwhite)),
                           child: Text(
                             'Proceed with order',
                             style: GoogleFonts.poppins(),
